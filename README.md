@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # mammamia
 
 ## Project setup
@@ -27,3 +28,7 @@ npm run test:e2e
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+=======
+# PizzeriaMammaMia
+Pizzería Mamma Mía Prueba Ejemplo Bootcamp Front End 0012
+>>>>>>> f93fadc2df2afd3bb2cbe650e23701e59d2fa21b

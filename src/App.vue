@@ -1,32 +1,46 @@
 <template>
   <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
+    <Navbar/>
     <router-view/>
+    <Footer/>
   </div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+<script>
+import Navbar from "@/components/Navbar"
+import Footer from "@/components/Footer"
+import { mapActions } from "vuex";
+export default {
+  name: "App",
+  components:{
+    Navbar,
+    Footer
+  },
+  methods: {
+    ...mapActions(["get_Pizzas"]) // tiene que coincidir con la acción creada en index.js
+  },
+  mounted() {
+    this.get_Pizzas()
+  }
+};
+</script>
+
+<style>
+body {
+  font-family: 'Cabin', sans-serif;
 }
 
-nav {
-  padding: 30px;
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Lobster', sans-serif;
+}
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+a,
+a:hover {
+  text-decoration: none;
+  color: white;
+}
 
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+ul {
+  list-style: none;
 }
 </style>

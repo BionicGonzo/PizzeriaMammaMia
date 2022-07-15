@@ -1,5 +1,5 @@
 <template>
-  <div class="detalle py-5 d-flex justify-content-center container">
+  <div class="detalle my-5 py-5 d-flex justify-content-center container">
     <div class="card mb-3">
       <div class="row g-0">
         <div class="col-md-5 img" :style="{backgroundImage: `url(${pizza.img})`}"></div>

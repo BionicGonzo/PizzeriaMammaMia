@@ -1,5 +1,5 @@
 <template>
-  <div class="navbar d-flex justify-content-between text-white bg-dark py-3">
+  <div class="navbar d-flex justify-content-between text-white bg-dark py-3 sticky-top">
     <div class="container">
       <router-link to="/">
         <div class="d-flex">

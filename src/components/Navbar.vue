@@ -10,7 +10,7 @@
 
       <router-link to="/carrito">
         <div>
-          <h5 class="mb-0">Ir al carrito &#128722;</h5>
+          <h5 class="mb-0">&#128722; Total: ${{formatNumber(total)}}</h5>
         </div>
       </router-link>
     </div>
@@ -18,8 +18,23 @@
 </template>
 
 <script>
+import utils from "@/utils/functions";
+const {formatNumber} = utils;
+
+import { mapActions, mapGetters } from 'vuex';
+
 export default {
-  name: "Navbar",
+  name: "Carrito",
+  computed: {
+    ...mapGetters(["carrito", "total"]), // "total" consume el total del carrito
+  },
+  methods: {
+    ...mapActions(["plus", "minus"]),
+    totalByPizza(cant, price) {
+      return formatNumber(cant * price);
+    },
+    formatNumber,
+  },
 };
 </script>
 

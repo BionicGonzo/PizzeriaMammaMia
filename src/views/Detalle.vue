@@ -5,7 +5,7 @@
         <div class="col-md-5 img" :style="{backgroundImage: `url(${pizza.img})`}"></div>
         <div class="col-md-7">
           <div class="card-body">
-            <h3 class="card-title text-capitalize">Salame</h3>
+            <h3 class="card-title text-capitalize">{{pizza.name}}</h3>
             <hr />
             <p class="card-text">
               {{pizza.desc}}

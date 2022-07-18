@@ -24,7 +24,7 @@
 
         <h2>Total: ${{formatNumber(total)}}</h2>
         <router-link to="/end">
-          <button class="btn btn-outline-success">Ir a Pagar</button>
+          <button id="irPagar" class="btn btn-outline-success">Ir a Pagar</button>
         </router-link> 
         <router-link to="/">
           <button class="btn btn-outline-dark mx-3">Volver a Inicio</button>

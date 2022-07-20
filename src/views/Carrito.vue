@@ -23,9 +23,7 @@
         </div>
 
         <h2>Total: ${{formatNumber(total)}}</h2>
-        <router-link to="/end">
-          <button id="irPagar" class="btn btn-outline-success">Ir a Pagar</button>
-        </router-link> 
+        <button id="irPagar" class="btn btn-outline-success" @click="resetCart">Ir a Pagar</button>
         <router-link to="/">
           <button class="btn btn-outline-dark mx-3">Volver a Inicio</button>
         </router-link>
@@ -46,7 +44,7 @@ export default {
     ...mapGetters(["carrito", "total"]), // "total" consume el total del carrito
   },
   methods: {
-    ...mapActions(["plus", "minus"]),
+    ...mapActions(["plus", "minus", "resetCart"]),
     totalByPizza(cant, price) {
       return formatNumber(cant * price);
     },

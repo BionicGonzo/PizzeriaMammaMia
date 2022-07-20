@@ -2,6 +2,7 @@ import axios from 'axios'
 import Vue from 'vue'
 import Vuex from 'vuex'
 import Axios from 'axios'
+import router from '@/router'
 
 Vue.use(Vuex)
 
@@ -20,6 +21,9 @@ export default new Vuex.Store({
     UPDATE_CART(state, carrito) {
       state.carrito = carrito; // reasignar el valor del atributo carrito, considerando que este nuevo carrito tiene incluido la modificación del producto que fue incrementado, se ejecuta al hacer click al botón con signo +
     },
+    RESET_CART(state) {
+      state.carrito = [] // reinicia el carrito a $0 luego de hacer click en botón "Ir a Pagar"
+    }
   },
   actions: {
     async get_Pizzas({commit}) {
@@ -59,6 +63,11 @@ export default new Vuex.Store({
         carrito = state.carrito.map((p) => (p.id == id ? (p.cant--, p) : p)); // si cantidad es diferente a 1, se mapea el carrito, para disminuir la cantidad
       }
       commit("UPDATE_CART", carrito); // mutación para actualizar el carrito
+    },
+
+    resetCart({commit}, id) { // acción para reiniciar carrito
+      commit("RESET_CART", id); // mutación para reiniciar el carrito a $0
+      router.push({name: 'Gracias'}); // push para forzar la vista "Gracias" al hacer click en "Ir a Pagar" y reiniciar el carrito
     }
   },
   getters: {
